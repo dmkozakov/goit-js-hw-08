@@ -26,6 +26,10 @@ function onSubmitBtn(evt) {
   evt.preventDefault();
   evt.currentTarget.reset();
   localStorage.clear();
+
+  console.log(formData);
+  formData.email = "";
+  formData.message = "";
 }
 
 function saveFormData() {
@@ -37,6 +41,9 @@ function saveFormData() {
 
       refs.emailInput.value = parsedData.email;
       refs.messageInput.value = parsedData.message;
+
+      formData.email = parsedData.email;
+      formData.message = parsedData.message;
     }
   } catch (error) {
     console.log(error.name);
