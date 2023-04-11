@@ -15,6 +15,8 @@ const formData = {
   email: "",
   message: "",
 };
+
+console.log(formData);
 saveFormData();
 
 function onFormInput(evt) {
@@ -25,7 +27,7 @@ function onFormInput(evt) {
 function onSubmitBtn(evt) {
   evt.preventDefault();
   evt.currentTarget.reset();
-  localStorage.clear();
+  localStorage.removeItem(STORAGE_KEY)
 
   console.log(formData);
   formData.email = "";
